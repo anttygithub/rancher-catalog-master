@@ -1,0 +1,10 @@
+.catalog:
+    name: "mysql-master"
+    version: "v0.1"
+    description: "mysql-master"
+    
+MYSQL-MASTER:
+  scale: 1
+  
+MYSQL-SLAVE:
+  scale: 1
