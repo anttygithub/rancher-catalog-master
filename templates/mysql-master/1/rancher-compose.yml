@@ -1,0 +1,19 @@
+.catalog:
+    name: "mysql-master"
+    version: "v0.1"
+    description: "mysql-master"
+    questions:
+  - variable: MASTER_IP
+    label: MASTER_IP
+    type: string
+  - variable: SLAVE_IP
+    label: SLAVE_IP
+    type: string
+    
+MYSQL-MASTER:
+  scale: 1
+  io.rancher.container.requested_ip: ${MASTER_IP}
+  
+MYSQL-SLAVE:
+  scale: 1
+  io.rancher.container.requested_ip: &{SLAVE_IP}

@@ -1,0 +1,14 @@
+MYSQL-MASTER:
+  image: 172.16.1.11:5000/mysql5.5
+  hostname: mysql
+  ports:
+  - '3306:3306'
+  environment:
+    REPLICATION_MASTER: 'true'
+    
+MYSQL-SLAVE:
+  image: 172.16.1.11:5000/mysql5.5
+  links:
+  - MYSQL-MASTER:mysql
+  environment:
+    REPLICATION_SLAVE: 'true'
