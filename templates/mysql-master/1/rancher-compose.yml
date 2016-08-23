@@ -3,19 +3,20 @@
     version: "v0.2.0"
     description: "mysql-master"
     questions:
-  - variable: "MASTER_IP"
-    label: "MASTER_IP"
-    required: false
-    type: "string"
-  - variable: "SLAVE_IP"
-    label: "SLAVE_IP"
-    required: false
-    type: "string"
+     - variable: "MASTER_IP"
+       description: "IP or hostname of the NFS Server" 
+       label: "MASTER_IP"
+       required: false
+       type: "string"
+     - variable: "SLAVE_IP"
+       description: "IP or hostname of the NFS Server"
+       label: "SLAVE_IP"
+       required: false
+       type: "string"
     
 MYSQL-MASTER:
   scale: 1
-  io.rancher.container.requested_ip: "${MASTER_IP}"
+
   
 MYSQL-SLAVE:
   scale: 1
-  io.rancher.container.requested_ip: "${SLAVE_IP}"
