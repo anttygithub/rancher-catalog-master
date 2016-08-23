@@ -1,7 +1,7 @@
 .catalog:
-    name: "mysql-master-slave"
+    name: "mysql-master"
     version: "v0.2"
-    description: "mysql-master-slave"
+    description: "mysql-master"
     questions:
   - variable: MASTER_IP
     label: MASTER_IP
