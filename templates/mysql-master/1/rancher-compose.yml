@@ -16,7 +16,8 @@
     
 MYSQL-MASTER:
   scale: 1
-
+	io.rancher.service.requested.host.id
   
 MYSQL-SLAVE:
   scale: 1
+  io.rancher.service.requested.host.id
