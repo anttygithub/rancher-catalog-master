@@ -7,7 +7,7 @@
        description: "IP or hostname of the NFS Server" 
        label: "MASTER_IP"
        required: false
-       type: "string"
+       type: "host"
      - variable: "SLAVE_IP"
        description: "IP or hostname of the NFS Server"
        label: "SLAVE_IP"
@@ -16,8 +16,6 @@
     
 MYSQL-MASTER:
   scale: 1
-	io.rancher.service.requested.host.id
   
 MYSQL-SLAVE:
   scale: 1
-  io.rancher.service.requested.host.id
