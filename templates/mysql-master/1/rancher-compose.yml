@@ -7,7 +7,7 @@
        description: "IP or hostname of the NFS Server" 
        label: "MASTER_IP"
        required: false
-       type: "host"
+       type: "string"
      - variable: "SLAVE_IP"
        description: "IP or hostname of the NFS Server"
        label: "SLAVE_IP"
