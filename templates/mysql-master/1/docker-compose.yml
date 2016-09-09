@@ -15,5 +15,6 @@ MYSQL-SLAVE:
   - MYSQL-MASTER:mysql
   environment:
     REPLICATION_SLAVE: 'true'
+    MYSQL_PASS: "ab888888"
   volumes:
     - /var/lib/mysql-slave:/var/lib/mysql
