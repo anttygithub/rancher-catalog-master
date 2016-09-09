@@ -6,6 +6,8 @@ MYSQL-MASTER:
   environment:
     REPLICATION_MASTER: 'true'
     MYSQL_PASS: "ab888888"
+  volumes:
+    - /var/lib/mysql-master:/var/lib/mysql
         
 MYSQL-SLAVE:
   image: 172.16.1.81:5000/mysql5.5
@@ -13,3 +15,5 @@ MYSQL-SLAVE:
   - MYSQL-MASTER:mysql
   environment:
     REPLICATION_SLAVE: 'true'
+  volumes:
+    - /var/lib/mysql-slave:/var/lib/mysql
