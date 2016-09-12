@@ -1,5 +1,5 @@
 MYSQL-MASTER:
-  image: 172.16.1.81:5000/mysql5.5
+  image: 172.16.1.81:5000/mysql-master:v5.7
   hostname: mysql
   ports:
   - '3306:3306'
@@ -8,9 +8,10 @@ MYSQL-MASTER:
     MYSQL_PASS: "ab888888"
   volumes:
     - /var/lib/mysql-master:/var/lib/mysql
+    - /var/lib/mysql-conf:/etc/mysql
         
 MYSQL-SLAVE:
-  image: 172.16.1.81:5000/mysql5.5
+  image: 172.16.1.81:5000/mysql-master:v5.7
   links:
   - MYSQL-MASTER:mysql
   environment:
@@ -18,3 +19,4 @@ MYSQL-SLAVE:
     MYSQL_PASS: "ab888888"
   volumes:
     - /var/lib/mysql-slave:/var/lib/mysql
+    - /var/lib/mysql-conf:/etc/mysql
