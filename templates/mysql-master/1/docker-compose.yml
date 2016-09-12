@@ -8,7 +8,6 @@ MYSQL-MASTER:
     MYSQL_PASS: "ab888888"
   volumes:
     - /var/lib/mysql-master:/var/lib/mysql
-    - /var/lib/mysql-conf:/etc/mysql
         
 MYSQL-SLAVE:
   image: 172.16.1.81:5000/mysql-master:v5.7
@@ -19,4 +18,3 @@ MYSQL-SLAVE:
     MYSQL_PASS: "ab888888"
   volumes:
     - /var/lib/mysql-slave:/var/lib/mysql
-    - /var/lib/mysql-conf:/etc/mysql
