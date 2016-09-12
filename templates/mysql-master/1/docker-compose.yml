@@ -1,5 +1,5 @@
 MYSQL-MASTER:
-  image: 172.16.1.81:5000/mysql-master:v5.7
+  image: 172.16.1.81:5000/mysql-master:v5.7.2
   hostname: mysql
   ports:
   - '3306:3306'
@@ -10,7 +10,7 @@ MYSQL-MASTER:
     - /var/lib/mysql-master:/var/lib/mysql
         
 MYSQL-SLAVE:
-  image: 172.16.1.81:5000/mysql-master:v5.7
+  image: 172.16.1.81:5000/mysql-master:v5.7.2
   links:
   - MYSQL-MASTER:mysql
   environment:
