@@ -1,6 +1,8 @@
 MYSQL-MASTER:
   image: 172.16.1.81:5000/mysql-master:v5.7.3
   hostname: mysql
+  labels:
+    io.rancher.scheduler.affinity:host_label: foo=mysql-master
   ports:
   - '3306:3306'
   environment:
@@ -12,6 +14,8 @@ MYSQL-MASTER:
         
 MYSQL-SLAVE:
   image: 172.16.1.81:5000/mysql-master:v5.7.3
+  labels:
+    io.rancher.scheduler.affinity:host_label: foo=mysql-slave
   links:
   - MYSQL-MASTER:mysql
   environment:
